@@ -1,0 +1,11 @@
+//Localhost ###
+http://localhost:3000/contacts
+http://localhost:3000/contact?id=626c1be05924bf7a3d33dd56
+http://localhost:3000/contact?id=626c1c215924bf7a3d33dd57
+http://localhost:3000/contact?id=626c1c485924bf7a3d33dd58
+
+//Production Deployed ###
+https://safe-fjord-75598.herokuapp.com/contacts
+https://safe-fjord-75598.herokuapp.com/contact?id=626c1be05924bf7a3d33dd56
+https://safe-fjord-75598.herokuapp.com/contact?id=626c1c215924bf7a3d33dd57
+https://safe-fjord-75598.herokuapp.com/contact?id=626c1c485924bf7a3d33dd58
