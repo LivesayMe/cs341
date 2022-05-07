@@ -29,3 +29,22 @@ https://safe-fjord-75598.herokuapp.com/contacts
 https://safe-fjord-75598.herokuapp.com/contact?id=626c1be05924bf7a3d33dd56
 https://safe-fjord-75598.herokuapp.com/contact?id=626c1c215924bf7a3d33dd57
 https://safe-fjord-75598.herokuapp.com/contact?id=626c1c485924bf7a3d33dd58
+
+(POST) https://safe-fjord-75598.herokuapp.com/contact
+{
+    "firstName": "George",
+    "lastName": "Orwell",
+    "email": "wellian@gmail.com",
+    "favoriteColor": "purple",
+    "birthday": "7/12/83"
+}
+(PUT) https://safe-fjord-75598.herokuapp.com/contact
+{
+    "id": "626c1c485924bf7a3d33dd58",
+    "firstName": "DaKun",
+    "lastName": "Wang",
+    "email": "xhc175892@gmail.com",
+    "favoriteColor": "orange",
+    "birthday": "10/05/98"
+}
+(DELETE) https://safe-fjord-75598.herokuapp.com/contact?id=627696d5a43796c4b728d763
