@@ -4,6 +4,26 @@ http://localhost:3000/contact?id=626c1be05924bf7a3d33dd56
 http://localhost:3000/contact?id=626c1c215924bf7a3d33dd57
 http://localhost:3000/contact?id=626c1c485924bf7a3d33dd58
 
+(DELETE) http://localhost:3000/contact?id=627695401fb480145393b829
+(POST) http://localhost:3000/contact
+{
+    "_id": "627695401fb480145393b829",
+    "firstName": "Trent",
+    "lastName": "Weber",
+    "email": "weber@gmail.com",
+    "favoriteColor": "blue",
+    "birthday": "7/12/98"
+}
+(PUT) http://localhost:3000/contact
+{
+    "id": "626c1c485924bf7a3d33dd58",
+    "firstName": "DaKun",
+    "lastName": "Wang",
+    "email": "xhc175892@gmail.com",
+    "favoriteColor": "white",
+    "birthday": "10/05/98"
+}
+
 //Production Deployed ###
 https://safe-fjord-75598.herokuapp.com/contacts
 https://safe-fjord-75598.herokuapp.com/contact?id=626c1be05924bf7a3d33dd56

@@ -3,6 +3,7 @@ const mongodb = require('./mongodb');
 var mongo = require('mongodb');
 var router = express.Router();
 
+
 router.get('/', function(req, res, next) {
   res.send('Anne Harley');
 });
@@ -13,8 +14,25 @@ router.get('/contacts', async function(req, res, next) {
 });
 
 router.get('/contact', async function(req, res, next) {
-  console.log(req.query.id);
   const results = await mongodb.getDb().collection('contacts').findOne({"_id": new mongo.ObjectId(req.query.id)});
+  res.send(results);
+});
+
+//POST request to add a contact to the contacts collection in the database (firstName, lastName, email, favoriteColor, birthday)
+router.post('/contact', async function(req, res, next) {
+  const results = await mongodb.getDb().collection('contacts').insertOne(req.body);
+  res.send(results);
+});
+
+//Put request to update a contact in the contacts collection
+router.put('/contact', async function(req, res, next) {
+  const results = await mongodb.getDb().collection('contacts').updateOne({"_id": new mongo.ObjectId(req.body.id)}, {$set: req.body});
+  res.send(results);
+});
+
+//Delete request to delete a contact from the contacts collection
+router.delete('/contact', async function(req, res, next) {
+  const results = await mongodb.getDb().collection('contacts').deleteOne({"_id": new mongo.ObjectId(req.query.id)});
   res.send(results);
 });
 
