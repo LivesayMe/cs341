@@ -13,8 +13,8 @@ router.get('/contacts', async function(req, res, next) {
   res.send(results);
 });
 
-router.get('/contact', async function(req, res, next) {
-  const results = await mongodb.getDb().collection('contacts').findOne({"_id": new mongo.ObjectId(req.query.id)});
+router.get('/contact/:id', async function(req, res, next) {
+  const results = await mongodb.getDb().collection('contacts').findOne({"_id": new mongo.ObjectId(req.params.id)});
   res.send(results);
 });
 
@@ -25,14 +25,14 @@ router.post('/contact', async function(req, res, next) {
 });
 
 //Put request to update a contact in the contacts collection
-router.put('/contact', async function(req, res, next) {
-  const results = await mongodb.getDb().collection('contacts').updateOne({"_id": new mongo.ObjectId(req.body.id)}, {$set: req.body});
+router.put('/contact/:id', async function(req, res, next) {
+  const results = await mongodb.getDb().collection('contacts').updateOne({"_id": new mongo.ObjectId(req.params.id)}, {$set: req.body});
   res.send(results);
 });
 
 //Delete request to delete a contact from the contacts collection
-router.delete('/contact', async function(req, res, next) {
-  const results = await mongodb.getDb().collection('contacts').deleteOne({"_id": new mongo.ObjectId(req.query.id)});
+router.delete('/contact/:id', async function(req, res, next) {
+  const results = await mongodb.getDb().collection('contacts').deleteOne({"_id": new mongo.ObjectId(req.params.id)});
   res.send(results);
 });
 
