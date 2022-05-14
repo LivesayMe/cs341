@@ -1,8 +1,8 @@
 //Localhost ###
-http://localhost:3000/contacts
-http://localhost:3000/contact?id=626c1be05924bf7a3d33dd56
-http://localhost:3000/contact?id=626c1c215924bf7a3d33dd57
-http://localhost:3000/contact?id=626c1c485924bf7a3d33dd58
+http://localhost:3000/
+http://localhost:3000/contact/626c1be05924bf7a3d33dd56
+http://localhost:3000/contact/626c1c215924bf7a3d33dd57
+http://localhost:3000/contact/626c1c485924bf7a3d33dd58
 
 (DELETE) http://localhost:3000/contact?id=627695401fb480145393b829
 (POST) http://localhost:3000/contact
