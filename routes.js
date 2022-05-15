@@ -20,7 +20,7 @@ router.get('/contacts/:id', async function(req, res, next) {
   res.send(results);
 });
 
-//POST request to add a contact to the contacts collection in the database (firstName, lastName, email, favoriteColor, birthday)
+//POST request to add a contact to the contacts collection in the database (firstName, lastName, email, favoriteColor, birthday, city, address, phone number)
 router.post('/contacts', async function(req, res, next) {
   const results = await mongodb.getDb().collection('contacts').insertOne(req.body);
   res.send(results);
