@@ -5,7 +5,7 @@ const doc = {
     title: 'CS 341 API',
     description: 'API for CS 341 Week 04'
   },
-  host: 'https://safe-fjord-75598.herokuapp.com',
+  host: 'safe-fjord-75598.herokuapp.com',
   schemes: ['https']
 };
 

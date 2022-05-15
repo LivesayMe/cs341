@@ -28,6 +28,9 @@ router.post('/contacts', async function(req, res, next) {
 
 //Put request to update a contact in the contacts collection
 router.put('/contacts/:id', async function(req, res, next) {
+  if(req.params.id == null){
+    res.send("Please enter a valid ID");
+  }
   const results = await mongodb.getDb().collection('contacts').updateOne({"_id": new mongo.ObjectId(req.params.id)}, {$set: req.body});
   res.send(results);
 });
