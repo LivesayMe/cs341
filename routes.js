@@ -34,7 +34,10 @@ router.put('/contacts/:id', async function(req, res, next) {
 
 //Delete request to delete a contact from the contacts collection
 router.delete('/contacts/:id', async function(req, res, next) {
-  const results = await mongodb.getDb().collection('contacts').deleteOne({"_id": new mongo.ObjectId(req.params.id)});
+  if(req.params.id == null){
+    res.send("Please enter a valid ID");
+  }
+      const results = await mongodb.getDb().collection('contacts').deleteOne({"_id": new mongo.ObjectId(req.params.id)});
   res.send(results);
 });
 
