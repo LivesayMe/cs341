@@ -3,6 +3,7 @@ const mongodb = require('./mongodb');
 var bodyParser = require('body-parser');
 const swaggerUi = require('swagger-ui-express');
 const swaggerDocument = require('./swagger.json');
+const cors = require('cors');
 
 const app = express()
 
@@ -13,13 +14,9 @@ require('dotenv').config();
 
 app.engine('html', require('ejs').renderFile);
 app.set('view engine', 'html');
-app.use(bodyParser.json())
-   .use((req, res, next) => {
-       res.setHeader('Access-Control-Allow-Origin', '*');
-       res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
-       next();
-    })
-    .use('/', require('./routes'));
+app.use(bodyParser.json());
+app.use(cors({origin: "*"}));
+app.use('/', require('./routes'));
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 
 
